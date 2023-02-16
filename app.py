@@ -20,7 +20,7 @@ utl.local_css("style.css")
 
 
 # CREATE CACHE DATA FUNCTION
-@st.cache_data
+@st.cache_data(ttl=600)
 def get_data():
     _ = load_dotenv(find_dotenv())
     connection_string = os.getenv("POSTGRESQL_ADDON_URI")
